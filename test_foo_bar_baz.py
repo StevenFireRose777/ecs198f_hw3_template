@@ -18,6 +18,8 @@ def test_divisibility_cases():
     assert foo_bar_baz(9).split()[-1] == "Foo"
     assert foo_bar_baz(30).split()[-1] == "Baz"
 
+def negative_input():
+    assert foo_bar_baz(-7) == "" # Should be an empty string
 
 def test_edge_cases():
     assert foo_bar_baz(0) == ""  # should give back an empty string
