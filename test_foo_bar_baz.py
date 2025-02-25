@@ -25,6 +25,9 @@ def test_edge_cases():
     assert foo_bar_baz(0) == ""  # should give back an empty string
     assert foo_bar_baz(1) == "1"  # should give back 1
 
+def should_not_work_cases():
+    result = foo_bar_baz("not a number")
+    assert(result) == TypeError(result)
 
 def test_large_input_case():
     result = foo_bar_baz(100)
