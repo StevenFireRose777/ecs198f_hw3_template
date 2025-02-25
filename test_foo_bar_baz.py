@@ -18,6 +18,12 @@ def test_divisibility_cases():
     assert foo_bar_baz(9).split()[-1] == "Foo"
     assert foo_bar_baz(30).split()[-1] == "Baz"
 
+
+def test_edge_cases():
+    assert foo_bar_baz(0) == ""  # should give back an empty string
+    assert foo_bar_baz(1) == "1"  # should give back 1
+
+
 def test_large_input_case():
     result = foo_bar_baz(100)
     assert len(result.split()) == 100
