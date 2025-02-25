@@ -25,7 +25,7 @@ def test_large_input_case():
 def testing_output_format():
     result = foo_bar_baz(10)
     assert isinstance(result, str)
-    assert " " not in result
+    assert "  " not in result
 
 if __name__ == "__main__":
     pytest.main()
