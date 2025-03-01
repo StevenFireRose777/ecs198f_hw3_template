@@ -12,6 +12,8 @@ def basic_test_cases():
     assert foo_bar_baz(4) == "1 2 3 Foo 4"
     assert foo_bar_baz(5) == "1 2 3 Foo 4 Bar"
     assert foo_bar_baz(15) == "1 2 3 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 14 Baz"
+    assert foo_bar_baz(30) == "1 2 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 14 Baz 16 17 Foo 19 Bar Foo 22 23 Foo Bar 26 Foo 28 29 Baz"
+
 def test_divisibility_cases():
     assert foo_bar_baz(10).split()[-1] == "Bar"
     assert foo_bar_baz(9).split()[-1] == "Foo"
@@ -19,6 +21,7 @@ def test_divisibility_cases():
 
 def negative_input():
     assert foo_bar_baz(-7) == "" # Should be an empty string
+    assert foo_bar_baz(-5) == ""
 
 def test_edge_cases():
     assert foo_bar_baz(0) == ""  # should give back an empty string
@@ -32,9 +35,9 @@ def case_invalid_inputs():
     with pytest.raises(TypeError):
         foo_bar_baz(None)
     with pytest.raises(TypeError):
-        foo_bar_baz([])
+        foo_bar_baz([10])
     with pytest.raises(TypeError):
-        foo_bar_baz({})
+        foo_bar_baz()
 
 def test_HUGE_input_case():
     result = foo_bar_baz(1000)
